@@ -1,0 +1,42 @@
+MongoDB shell version v3.4.1
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.1
+switched to db irms
+O-H stretch,H-bonded alchohl 3200 3600 693 234 3365 6244
+O-H stretch,free alchohl 3500 3700 889 38 2071 7538
+C-O stretch,free alchohl 1050 1150 909 18 9140 469
+C-H stretch alkane 2850 3000 7935 694 60 1847
+-C-H bending alkane 1350 1480 8324 305 1770 137
+=C-H stretch alkene 3010 3100 1135 80 7443 1878
+=C-H bending alkene 675 1000 1196 19 9029 292
+C=C stretch alkene 1620 1680 914 301 1232 8089
+C-F stretch CF 1000 1400 477 16 9749 294
+C-Cl stretch CCl 600 800 742 23 9436 335
+C-Br stretch CBr 500 600 208 83 9170 1075
+C-I stretch CI 450 550 0 41 9763 732
+C-H stretch alkyne 3250 3350 5 202 576 9753
+-C=-C- stretch alkyne 2100 2260 135 72 243 10086
+N-H stretch amine 3300 3500 1451 48 1070 7967
+C-N stretch amine 1080 1360 1460 39 8753 284
+N-H bending amine 1550 1650 1333 166 5647 3390
+C-H stretch aromatic 3000 3100 6208 627 2741 960
+C=C stretch aromatic 1400 1600 6607 228 3485 216
+C-O stretch ether 1000 1300 2628 70 7590 248
+CN stretch nitrile 2210 2260 144 292 41 10059
+N-O stretch nitro 1515 1560 569 138 2556 7273
+N-O stretch nitro 1345 1385 498 209 7287 2542
+C=O stretch carbonyl 1670 1820 3970 298 338 5930
+C=O stretch acid 1700 1725 40 703 907 8886
+O-H stretch acid 2500 3300 706 37 9367 426
+C-O stretch acid 1210 1320 711 32 9359 434
+C=O stretch aldehyde 1720 1740 93 130 903 9410
+=C-H stretch aldehyde 2820 2850 25 198 566 9747
+=C-H stretch aldehyde 2720 2750 7 216 10 10303
+C=O stretch amide 1640 1690 220 656 1182 8478
+N-H stretch amide 3100 3500 740 136 4977 4683
+N-H bending amide 1550 1640 671 205 6220 3440
+C=O stretch anhydride 1800 1830 15 27 194 10300
+C=O stretch anhydride 1740 1775 12 30 1783 8711
+C=O stretch ester 1735 1750 421 787 553 8775
+C-O stretch ester 1000 1300 1177 31 9041 287
+bye

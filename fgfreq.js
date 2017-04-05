@@ -12,7 +12,7 @@ function count_tt(collection,fg,freq_lower,freq_higher) {
 				}
 			}
 		}
-	}).count();
+	}).hint("thir_method").count();
 }
 function count_ft(collection,fg,freq_lower,freq_higher) {
 	return collection.find({
@@ -26,19 +26,19 @@ function count_ft(collection,fg,freq_lower,freq_higher) {
 				}
 			}
 		}
-	}).count();
+	}).hint("thir_method").count();
 }
 function count_tx(collection,fg) {
 	return collection.find({
 		["fg."+fg]: true,
 		"thir": { $exists:true }
-	}).count();
+	}).hint("thir_method").count();
 }
 function count_fx(collection,fg) {
 	return collection.find({
 		["fg."+fg]: false,
 		"thir": { $exists:true }
-	}).count();
+	}).hint("thir_method").count();
 }
 
 // source: http://www2.ups.edu/faculty/hanson/Spectroscopy/IR/IRfrequencies.html
@@ -103,17 +103,17 @@ var raw_fg_info = [
 var scaling = 0.96;
 
 var len = raw_fg_info.length;
-var collection = db.universe
 use irms
+var collection = db.universe
 for(var i=0;i<len;i++) {
 	json = raw_fg_info[i];
 	name = json["name"];
 	fg = json["fg"];
 	lower = json["lower"];
 	upper = json["upper"];
-	tt = count_tt(collection,fg,lower*scaling,upper*scaling);
+	tt = count_tt(collection,fg,lower/scaling,upper/scaling);
 	tf = count_tx(collection,fg) - tt;
-	ft = count_tt(collection,fg,lower*scaling,upper*scaling);
+	ft = count_ft(collection,fg,lower/scaling,upper/scaling);
 	ff = count_fx(collection,fg) - ft;
-	console.log(name,fg,lower,upper,tt,tf,ft,ff)
+	print(name,fg,lower,upper,tt,tf,ft,ff)
 }
