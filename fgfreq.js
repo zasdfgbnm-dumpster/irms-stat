@@ -1,8 +1,8 @@
 // count functions: count_XY
 // X = fg, Y = band
-function count_tt(collection,fg,freq_lower,freq_higher) {
+function count_xt(x,collection,fg,freq_lower,freq_higher) {
 	return collection.find({
-		["fg."+fg]: true,
+		["fg."+fg]: x,
 		"thir.method": "B3LYP/6-31G*",
 		"thir.freqs": {
 			$elemMatch: {
@@ -13,32 +13,24 @@ function count_tt(collection,fg,freq_lower,freq_higher) {
 			}
 		}
 	}).hint("thir_method").count();
+}
+function count_xx(x,collection,fg) {
+	return collection.find({
+		["fg."+fg]: x,
+		"thir.method": "B3LYP/6-31G*"
+	}).hint("thir_method").count();
+}
+function count_tt(collection,fg,freq_lower,freq_higher) {
+	return count_xt(true,collection,fg,freq_lower,freq_higher);
 }
 function count_ft(collection,fg,freq_lower,freq_higher) {
-	return collection.find({
-		["fg."+fg]: false,
-		"thir.method": "B3LYP/6-31G*",
-		"thir.freqs": {
-			$elemMatch: {
-				freq: {
-					$gt: freq_lower,
-					$lt: freq_higher
-				}
-			}
-		}
-	}).hint("thir_method").count();
+	return count_xt(false,collection,fg,freq_lower,freq_higher);
 }
 function count_tx(collection,fg) {
-	return collection.find({
-		["fg."+fg]: true,
-		"thir": { $exists:true }
-	}).hint("thir_method").count();
+	return count_xx(true,collection,fg);
 }
 function count_fx(collection,fg) {
-	return collection.find({
-		["fg."+fg]: false,
-		"thir": { $exists:true }
-	}).hint("thir_method").count();
+	return count_xx(false,collection,fg);
 }
 
 // source: http://www2.ups.edu/faculty/hanson/Spectroscopy/IR/IRfrequencies.html
